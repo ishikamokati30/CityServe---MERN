@@ -1,0 +1,16 @@
+.seller-layout { display: flex; min-height: calc(100vh - 64px); }
+.seller-sidebar { width: 220px; background: #1e1b4b; color: #fff; flex-shrink: 0; padding: 1.5rem 0; display: flex; flex-direction: column; }
+.sidebar-brand { font-size: 1rem; font-weight: 800; padding: 0 1.25rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 0.75rem; }
+.sidebar-nav { display: flex; flex-direction: column; gap: 0.2rem; padding: 0 0.75rem; }
+.sidebar-link { display: flex; align-items: center; gap: 0.6rem; padding: 0.65rem 0.9rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; color: rgba(255,255,255,0.65); transition: all 0.2s; }
+.sidebar-link:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.sidebar-link.active { background: var(--primary); color: #fff; }
+.seller-main { flex: 1; padding: 2rem; overflow-y: auto; background: var(--bg); }
+@media (max-width: 768px) {
+  .seller-layout { flex-direction: column; }
+  .seller-sidebar { width: 100%; flex-direction: row; padding: 0.75rem; overflow-x: auto; }
+  .sidebar-brand { display: none; }
+  .sidebar-nav { flex-direction: row; padding: 0; gap: 0.3rem; flex-wrap: nowrap; }
+  .sidebar-link { white-space: nowrap; font-size: 0.8rem; }
+  .seller-main { padding: 1rem; }
+}

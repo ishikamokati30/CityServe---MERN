@@ -1,0 +1,37 @@
+.back-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--primary); font-weight: 600; margin-bottom: 1.5rem; font-size: 0.9rem; }
+.order-detail-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+.order-detail-header h1 { font-size: 1.6rem; font-weight: 800; }
+.order-date-text { color: var(--muted); font-size: 0.85rem; margin-top: 0.2rem; }
+
+.progress-card { padding: 1.5rem; margin-bottom: 1.5rem; overflow-x: auto; }
+.progress-steps { display: flex; align-items: flex-start; min-width: 500px; }
+.progress-step { display: flex; flex-direction: column; align-items: center; position: relative; flex: 1; }
+.step-dot { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--border); background: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; z-index: 1; }
+.progress-step.done .step-dot { background: var(--success); border-color: var(--success); color: #fff; }
+.progress-step.current .step-dot { background: var(--primary); border-color: var(--primary); color: #fff; }
+.step-label { font-size: 0.72rem; text-align: center; margin-top: 0.4rem; text-transform: capitalize; color: var(--muted); }
+.progress-step.done .step-label, .progress-step.current .step-label { color: var(--text); font-weight: 600; }
+.step-line { position: absolute; top: 16px; left: 50%; width: 100%; height: 2px; background: var(--border); z-index: 0; }
+.progress-step.done .step-line { background: var(--success); }
+
+.order-detail-grid { display: grid; grid-template-columns: 1fr 300px; gap: 1.5rem; }
+.order-items-card { padding: 1.5rem; }
+.order-items-card h3, .info-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+.od-item { display: flex; align-items: center; gap: 0.9rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+.od-item:last-of-type { border-bottom: none; }
+.od-item-img { width: 52px; height: 52px; border-radius: 8px; overflow: hidden; background: #f3f4f6; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+.od-item-img img { width: 100%; height: 100%; object-fit: cover; }
+.od-item-info { flex: 1; }
+.od-item-name { font-weight: 600; font-size: 0.95rem; }
+.od-item-qty { font-size: 0.82rem; color: var(--muted); }
+.od-item-price { font-weight: 700; }
+.od-totals { margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 0.75rem; }
+.od-total-row { display: flex; justify-content: space-between; padding: 0.3rem 0; font-size: 0.9rem; color: var(--muted); }
+.od-total-row.bold { font-weight: 800; font-size: 1rem; color: var(--text); }
+.od-total-row.green span { color: var(--success); }
+
+.info-card { padding: 1.25rem 1.5rem; }
+.info-card p { font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--text); }
+.info-card p:last-child { margin-bottom: 0; }
+
+@media (max-width: 860px) { .order-detail-grid { grid-template-columns: 1fr; } }
