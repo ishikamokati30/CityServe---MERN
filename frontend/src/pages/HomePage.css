@@ -1,0 +1,52 @@
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff; padding: 5rem 2rem;
+  display: flex; align-items: center; justify-content: center; gap: 3rem;
+  text-align: center; flex-wrap: wrap;
+}
+
+.hero-content h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+.gradient-text { background: linear-gradient(90deg, #ffd700, #ff6584); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-content p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
+
+.hero-search {
+  position: relative; max-width: 420px; margin: 0 auto;
+}
+.hero-search .search-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--muted); }
+.hero-search input {
+  width: 100%; padding: 0.9rem 1rem 0.9rem 3rem;
+  border-radius: 50px; border: none; font-size: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.hero-search input:focus { outline: 2px solid #ffd700; }
+.hero-illustration { font-size: 8rem; }
+
+.cities-section { padding: 3rem 0; }
+
+.cities-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.2rem;
+}
+
+.city-card {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.2rem 1.5rem; cursor: pointer;
+  transition: all 0.2s; border: 2px solid transparent;
+}
+.city-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+.city-icon { font-size: 2rem; }
+.city-info h3 { font-weight: 700; font-size: 1rem; }
+.city-info p { font-size: 0.85rem; color: var(--muted); }
+
+.features-section { background: #fff; padding: 4rem 0; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
+.feature-card { padding: 2rem; text-align: center; transition: transform 0.2s; }
+.feature-card:hover { transform: translateY(-4px); }
+.feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.feature-card h3 { font-weight: 700; margin-bottom: 0.5rem; }
+.feature-card p { color: var(--muted); font-size: 0.9rem; }
+
+@media (max-width: 768px) {
+  .hero { padding: 3rem 1rem; }
+  .hero-content h1 { font-size: 2rem; }
+  .hero-illustration { font-size: 5rem; }
+}

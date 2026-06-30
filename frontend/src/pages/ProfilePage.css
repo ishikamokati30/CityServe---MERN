@@ -1,0 +1,11 @@
+.profile-layout { display: grid; grid-template-columns: 260px 1fr; gap: 1.5rem; align-items: start; }
+.profile-sidebar { padding: 2rem; text-align: center; }
+.avatar-circle { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg,var(--primary),var(--secondary)); color:#fff; font-size: 2rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+.profile-sidebar h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
+.profile-email { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.75rem; }
+.profile-nav { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.profile-nav-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; border-radius: 8px; background: #f3f4f6; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; }
+.profile-nav-link:hover { background: var(--primary); color: #fff; }
+.profile-form-card { padding: 2rem; }
+.profile-form-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+@media (max-width: 680px) { .profile-layout { grid-template-columns: 1fr; } }
