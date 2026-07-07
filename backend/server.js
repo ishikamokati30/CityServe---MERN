@@ -40,6 +40,12 @@ if (fs.existsSync(frontendBuildPath)) {
   app.get('*', (req, res) => {
     res.sendFile(path.join(frontendBuildPath, 'index.html'));
   });
+} else {
+  // Fallback if frontend build doesn't exist
+  app.get('/', (req, res) => {
+    res.json({ message: 'CityServe API', status: 'running', apis: ['auth', 'cities', 'shops', 'products', 'services', 'cart', 'orders'] });
+  });
+  app.get('*', (req, res) => res.status(404).json({ error: 'Frontend build not found. API endpoints available at /api/*' }));
 }
 
 // Error handler
