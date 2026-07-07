@@ -37,7 +37,7 @@ app.get('/api/health', (req, res) => res.json({ status: 'ok', time: new Date() }
 const frontendBuildPath = path.join(__dirname, '../frontend/build');
 if (fs.existsSync(frontendBuildPath)) {
   app.use(express.static(frontendBuildPath));
-  app.get('*', (req, res) => {
+  app.use((req, res) => {
     res.sendFile(path.join(frontendBuildPath, 'index.html'));
   });
 } else {
@@ -45,7 +45,7 @@ if (fs.existsSync(frontendBuildPath)) {
   app.get('/', (req, res) => {
     res.json({ message: 'CityServe API', status: 'running', apis: ['auth', 'cities', 'shops', 'products', 'services', 'cart', 'orders'] });
   });
-  app.get('*', (req, res) => res.status(404).json({ error: 'Frontend build not found. API endpoints available at /api/*' }));
+  app.use((req, res) => res.status(404).json({ error: 'Frontend build not found. API endpoints available at /api/*' }));
 }
 
 // Error handler
