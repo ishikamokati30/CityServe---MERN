@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: cityserve-backend
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        scope: run
+        sync: false
+      - key: PORT
+        value: "10000"

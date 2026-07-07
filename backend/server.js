@@ -33,6 +33,15 @@ app.use('/api/owner', require('./routes/owner'));
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'ok', time: new Date() }));
 
+// ✅ Serve React Frontend
+const frontendBuildPath = path.join(__dirname, '../frontend/build');
+if (fs.existsSync(frontendBuildPath)) {
+  app.use(express.static(frontendBuildPath));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(frontendBuildPath, 'index.html'));
+  });
+}
+
 // Error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
